@@ -25,12 +25,22 @@ function viewCart() {
   } else if(Object.keys(cart).length === 2) {
     return 'In your cart, you have '+cart[0].itemName+' at $'+cart[0].itemPrice+', and '+cart[1].itemName+' at $'+cart[1].itemPrice+'.'
   } else {
+<<<<<<< HEAD
     var cartNew =[];
     var l = Object.keys(cart).length
     for (let i = 0; i<l-1;i++){
       cartNew.push(cart[i].itemName+' at $'+cart[i].itemPrice)
     }
     return 'In your cart, you have '+cart[0].itemName+' at $'+cart[0].itemPrice+', '+cart[1].itemName+' at $'+cart[1].itemPrice+', and '+cart[2].itemName+' at $'+cart[2].itemPrice+'.'
+=======
+    var cartNew,statement =[];
+    var l = Object.keys(cart).length
+    for (let i = 0; i<l-1;i++){
+      cartNew = cartNew + cart[i].itemName+' at $'+cart[i].itemPrice+', ')
+    }
+    cartNew = cartNew+'and '+cart[l].itemName+' at $'+cart[l].itemPrice+'.'
+    return 'In your cart, you have '+cartNew
+>>>>>>> addcd78224b43b816ac224ff7574caf66d945616
   }
 }
 
